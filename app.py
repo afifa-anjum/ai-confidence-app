@@ -35,7 +35,7 @@ if st.button("Generate Answer"):
                 messages=[{"role": "user", "content": prompt}]
             )
             
-            answer_text = response.choices.message.content
+            answer_text = response.choices[0].message.content
             
             st.subheader("Confidence-Layered Output:")
             for line in answer_text.split('\n'):
