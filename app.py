@@ -4,19 +4,17 @@ from openai import OpenAI
 st.title("AI Confidence Layer Prototype")
 st.write("Test out how an AI distinguishes between verified facts, logical guesses, and speculation.")
 
-# Input for Groq API Key
-api_key = st.sidebar.text_input("Enter your Groq API Key", type="password")
+# Hardcode your API key right here in the code so it works automatically for everyone
+# (Just replace the string with your actual gsk_... key)
+api_key = "gsk_your_actual_groq_key_here"
 
 # User input text box
 user_question = st.text_input("Ask a question based on your document or topic:")
 
 if st.button("Generate Answer"):
-    if not api_key:
-        st.error("Please enter your Groq API key in the sidebar first.")
-    elif not user_question:
+    if not user_question:
         st.warning("Please type a question.")
     else:
-        # Initializing client with the free Groq endpoint
         client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
         
         with st.spinner("Analyzing and confidence-scoring response..."):
