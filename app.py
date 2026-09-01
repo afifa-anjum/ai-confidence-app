@@ -4,11 +4,9 @@ from openai import OpenAI
 st.title("AI Confidence Layer Prototype")
 st.write("Test out how an AI distinguishes between verified facts, logical guesses, and speculation.")
 
-# Hardcode your API key right here in the code so it works automatically for everyone
-# (Just replace the string with your actual gsk_... key)
-api_key = "gsk_your_actual_groq_key_here"
+# Fetch the key securely from Streamlit Secrets
+api_key = st.secrets["GROQ_API_KEY"]
 
-# User input text box
 user_question = st.text_input("Ask a question based on your document or topic:")
 
 if st.button("Generate Answer"):
