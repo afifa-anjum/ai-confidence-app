@@ -31,7 +31,7 @@ if st.button("Generate Answer"):
             """
             
             response = client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-120b",
                 messages=[{"role": "user", "content": prompt}],
                 stream=False
             )
