@@ -32,7 +32,8 @@ if st.button("Generate Answer"):
             
             response = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": prompt}]
+                messages=[{"role": "user", "content": prompt}],
+                stream=False
             )
             
             answer_text = response.choices[0].message.content
